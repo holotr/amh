@@ -2,8 +2,7 @@ FROM ubuntu:22.04
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN sed -i "s@http://.*ubuntu.com@http://mirrors.aliyun.com@g" /etc/apt/sources.list \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install wget dropbear -y \
     && export CV=[CN] DV=N \
     && wget http://dl.amh.sh/amh.sh \
